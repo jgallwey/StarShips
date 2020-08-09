@@ -25,6 +25,7 @@ namespace StarShipsPitStopCalculator.Domain.Workflow
 			double megaLights)
 		{
 			var _starShips = await this.c_starShipRetriever.Retrieve($"{this.c_appSettings.StarWarsUrl}/{this.c_appSettings.StarShipsEndpoint}/");
+			if (_starShips == null) { return null; }
 
 			return this.BuildStarShipsPitStops(_starShips, megaLights);
 		}

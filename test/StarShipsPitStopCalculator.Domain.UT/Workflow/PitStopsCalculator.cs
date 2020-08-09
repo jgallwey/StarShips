@@ -52,5 +52,16 @@ namespace StarShipsPitStopCalculator.Domain.UT.Workflow
 
 			Assert.AreEqual(0, _result.Count());
 		}
+
+
+		[Test]
+		public async Task Execute_Failure()
+		{
+			this.c_starShipRetriever.Retrieve("URL").ReturnsForAnyArgs((IEnumerable<StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip>)null);
+
+			var _result = await this.c_SUT.Execute(this.c_megaLights);
+
+			Assert.IsNull(_result);
+		}
 	}
 }

@@ -69,6 +69,13 @@ namespace StarShipsPitStopCalculator.Application
 		private static void OutputResult(
 			IEnumerable<StarShipsPitStopCalculator.Domain.Types.Workflow.StarShipsPitStops> starShipsPitStops)
 		{
+			if (starShipsPitStops == null)
+			{
+				Console.WriteLine("Unable to retrieve any star ships");
+
+				return;
+			}
+
 			starShipsPitStops.Where(starShipsPitStop => !string.Equals(starShipsPitStop.Stops, "unknown", StringComparison.OrdinalIgnoreCase))
 				.ToList()
 				.ForEach(starShipsPitStop => Console.WriteLine($"{starShipsPitStop.Name}: {starShipsPitStop.Stops}"));
