@@ -1,4 +1,4 @@
-# StarShips
+# Star Ships Pit Stop Calculator
 
 # Introduction
 This project is a C# .Net Core 3.1 console application which makes use of the Star Wars API https://swapi.dev/.
