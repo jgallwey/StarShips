@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarShipsPitStopCalculator.Application", "src\StarShipsPitStopCalculator.Application\StarShipsPitStopCalculator.Application.csproj", "{02B8408C-CF1C-4A70-8B37-FF8D440BDC53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarShipsPitStopCalculator.Domain", "src\StarShipsPitStopCalculator.Domain\StarShipsPitStopCalculator.Domain.csproj", "{71358770-8793-41EF-BAB4-1950D0DC1074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarShipsPitStopCalculator.Domain.UT", "test\StarShipsPitStopCalculator.Domain.UT\StarShipsPitStopCalculator.Domain.UT.csproj", "{0B10892D-CDCF-4350-A82C-ADA3AE5E8CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarShipsPitStopCalculator.Factory.UT", "test\StarShipsPitStopCalculator.Factory.UT\StarShipsPitStopCalculator.Factory.UT.csproj", "{19C0B462-3DCD-4D12-A4F8-2491BCFADF56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarShipsPitStopCalculator.Application.IT", "test\StarShipsPitStopCalculator.Application.IT\StarShipsPitStopCalculator.Application.IT.csproj", "{44C0FA48-F2A4-4229-A9B0-404B2D449EAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02B8408C-CF1C-4A70-8B37-FF8D440BDC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B8408C-CF1C-4A70-8B37-FF8D440BDC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B8408C-CF1C-4A70-8B37-FF8D440BDC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B8408C-CF1C-4A70-8B37-FF8D440BDC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71358770-8793-41EF-BAB4-1950D0DC1074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71358770-8793-41EF-BAB4-1950D0DC1074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71358770-8793-41EF-BAB4-1950D0DC1074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71358770-8793-41EF-BAB4-1950D0DC1074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B10892D-CDCF-4350-A82C-ADA3AE5E8CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B10892D-CDCF-4350-A82C-ADA3AE5E8CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B10892D-CDCF-4350-A82C-ADA3AE5E8CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B10892D-CDCF-4350-A82C-ADA3AE5E8CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C0B462-3DCD-4D12-A4F8-2491BCFADF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C0B462-3DCD-4D12-A4F8-2491BCFADF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C0B462-3DCD-4D12-A4F8-2491BCFADF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C0B462-3DCD-4D12-A4F8-2491BCFADF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44C0FA48-F2A4-4229-A9B0-404B2D449EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C0FA48-F2A4-4229-A9B0-404B2D449EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C0FA48-F2A4-4229-A9B0-404B2D449EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44C0FA48-F2A4-4229-A9B0-404B2D449EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA711171-F515-401C-BB61-EE43AB011440}
+	EndGlobalSection
+EndGlobal
