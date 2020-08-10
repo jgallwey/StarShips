@@ -13,9 +13,6 @@ namespace StarShipsPitStopCalculator.Application.Infrastructure.StarShips
 		private readonly StarShipsPitStopCalculator.Application.Infrastructure.ICustomHttpClient c_customHttpClient;
 
 
-		private List<StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip> c_starShips;
-
-
 		public StarShipRetriever(
 			StarShipsPitStopCalculator.Application.Infrastructure.ICustomHttpClient customHttpClient)
 		{
@@ -26,7 +23,7 @@ namespace StarShipsPitStopCalculator.Application.Infrastructure.StarShips
 		public async Task<IEnumerable<StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip>> Retrieve(
 			string url)
 		{
-			this.c_starShips = new List<StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip>();
+			var _mappedStarShips = new List<StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip>();
 			var _url = url;
 			while (!String.IsNullOrEmpty(_url))
 			{
@@ -35,19 +32,18 @@ namespace StarShipsPitStopCalculator.Application.Infrastructure.StarShips
 
 				var _responseBody = await _response.Content.ReadAsStringAsync();
 				var _starShips = JsonSerializer.Deserialize<StarShipsPitStopCalculator.Application.Infrastructure.StarShips.Types.StarShips>(_responseBody);
-				this.MapToDomain(_starShips);
+				_mappedStarShips.AddRange(this.MapToDomain(_starShips));
 				_url = _starShips.next;
 			}
 
-			return this.c_starShips;
+			return _mappedStarShips;
 		}
 
 
-		private void MapToDomain(
+		private IEnumerable<StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip> MapToDomain(
 			StarShipsPitStopCalculator.Application.Infrastructure.StarShips.Types.StarShips starShips)
 		{
-			starShips.results.ToList().ForEach(result =>
-				this.c_starShips.Add( new StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip(result.name, result.MGLT)));
+			return starShips.results.Select(result =>  new StarShipsPitStopCalculator.Domain.Types.AggregateRoot.StarShip(result.name, result.MGLT));
 		}
 	}
 }

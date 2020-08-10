@@ -33,14 +33,13 @@ namespace StarShipsPitStopCalculator.Application
 					}
 					var _pitStopsCalculatorService = c_serviceProvider.GetService<StarShipsPitStopCalculator.Domain.Workflow.IPitStopsCalculator>();
 					var _starShipsPitStops = await _pitStopsCalculatorService.Execute(_megaLights);
-					OutputResult(_starShipsPitStops);
+					OutputStarShipsPitStops(_starShipsPitStops);
 				}
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
 			}
-
 		}
 
 
@@ -66,7 +65,7 @@ namespace StarShipsPitStopCalculator.Application
 		}
 
 
-		private static void OutputResult(
+		private static void OutputStarShipsPitStops(
 			IEnumerable<StarShipsPitStopCalculator.Domain.Types.Workflow.StarShipsPitStops> starShipsPitStops)
 		{
 			if (starShipsPitStops == null)
@@ -79,11 +78,11 @@ namespace StarShipsPitStopCalculator.Application
 			starShipsPitStops.Where(starShipsPitStop => !string.Equals(starShipsPitStop.Stops, "unknown", StringComparison.OrdinalIgnoreCase))
 				.ToList()
 				.ForEach(starShipsPitStop => Console.WriteLine($"{starShipsPitStop.Name}: {starShipsPitStop.Stops}"));
+			Console.WriteLine();
 			Console.WriteLine("MGLT unknown for the following star ships, unable to calculate stops!");
 			starShipsPitStops.Where(starShipsPitStop => string.Equals(starShipsPitStop.Stops, "unknown", StringComparison.OrdinalIgnoreCase))
 				.ToList()
 				.ForEach(starShipsPitStop => Console.WriteLine($"{starShipsPitStop.Name}: {starShipsPitStop.Stops}"));
-
 		}
 	}
 }

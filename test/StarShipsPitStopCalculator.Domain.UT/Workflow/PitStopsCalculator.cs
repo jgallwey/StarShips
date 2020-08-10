@@ -29,8 +29,8 @@ namespace StarShipsPitStopCalculator.Domain.UT.Workflow
 		[Test]
 		public async Task Execute_Success()
 		{
-			var _StarShips = StarShipsPitStopCalculator.Factory.UT.AggregateRoot.StarShip.Default();
-			this.c_starShipRetriever.Retrieve("URL").ReturnsForAnyArgs(_StarShips);
+			var _starShips = StarShipsPitStopCalculator.Factory.UT.AggregateRoot.StarShip.Default();
+			this.c_starShipRetriever.Retrieve("URL").ReturnsForAnyArgs(_starShips);
 			var _expectedRatesResponse = StarShipsPitStopCalculator.Factory.UT.Workflow.StarShipsPitStops.Default();
 
 			var _result = await this.c_SUT.Execute(this.c_megaLights);
